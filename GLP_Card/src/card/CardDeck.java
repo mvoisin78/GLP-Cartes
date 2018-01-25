@@ -11,7 +11,7 @@ public class CardDeck {
 	public void InitPackage() { //Set the Values and Type for each card in the deck
 
 		int i;
-		for(i=0;i<=12;i++) { // Init the 54 first card
+		for(i=0;i<=12;i++) {  // Init the 54 first card
 			deck[i]= new Card(EnumColor.Club,i+1); 
 			deck[i+13]= new Card(EnumColor.Diamond,i+1);
 			deck[i+26]=new Card(EnumColor.Heart,i+1);
