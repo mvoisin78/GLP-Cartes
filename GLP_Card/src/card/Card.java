@@ -5,7 +5,7 @@ public class Card {
 	private int value;
 	private EnumColor c;  //Clubs - Diamonds - Hearts - Spades
 	
-	public Card(EnumColor c, int value) {
+	public Card(EnumColor c, int value) { //
 		this.c = c;
 		this.value = value;
 	}
