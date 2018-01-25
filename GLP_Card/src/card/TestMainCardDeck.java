@@ -3,6 +3,7 @@ package card;
 public class TestMainCardDeck {
 
 	public static void main(String[] args) {
+		
 		CardDeck deck1 = new CardDeck();
 		deck1.InitPackage();
 		for(int i=0; i<52;i++) {
