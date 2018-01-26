@@ -2,19 +2,19 @@ package card;
 
 public class Card {
 	//private String type; 
-	private int value;
-	private EnumColor c;  //Clubs - Diamonds - Hearts - Spades
+	private EnumValue value;   //Value of the card (From 3 to Ace, then Joker and 2)
+	private EnumColor color;  //Clubs - Diamonds - Hearts - Spades
 	
-	public Card(EnumColor c, int value) { 
-		this.c = c;
+	public Card(EnumColor color, EnumValue value) { 
+		this.color = color;
 		this.value = value;
 	}
 
 	public EnumColor getColor() {
-		return c;
+		return color;
 	}
 
-	public int getValue() {
+	public EnumValue getValue() {
 		return value;
 	}
 	
