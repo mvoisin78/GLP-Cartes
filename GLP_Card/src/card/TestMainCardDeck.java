@@ -8,8 +8,7 @@ public class TestMainCardDeck {
 		deck1.InitPackage();
 		for(int i=0; i<54;i++) {
 			System.out.println(deck1.getCardValue(deck1.getCard(i)) +" " + deck1.getCardColor(deck1.getCard(i)));
-		}
-		
+		}		
 	}
 
 }

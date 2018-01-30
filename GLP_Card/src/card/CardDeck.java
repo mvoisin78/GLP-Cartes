@@ -12,15 +12,15 @@ public class CardDeck {
 		int cardNumber = 0;
 		for (EnumColor color : EnumColor.values()) {
 			for(EnumValue value : EnumValue.values()) {
-				if (color.getValue()!=4 && value.getValue()!=17) { //Exclude Joker
+				if (color.getEnumValue()!=4 && value.getEnumValue()!=17) { //Exclude Joker
 					deck[cardNumber] = new Card(color, value);
 					cardNumber ++;
 				}
 			}
 			
 		}
-		deck[52] = new Card(EnumColor.Joker,EnumValue.Joker); //init Jokers
-		deck[53] = new Card(EnumColor.Joker,EnumValue.Joker);
+		deck[52] = new Card(EnumColor.JOKER,EnumValue.JOKER); //init Jokers
+		deck[53] = new Card(EnumColor.JOKER,EnumValue.JOKER);
 		
 		
 	}
