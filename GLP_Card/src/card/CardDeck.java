@@ -19,7 +19,7 @@ public class CardDeck {
 			}
 			
 		}
-		//init Jokers
+		//Initializes Jokers
 		deck[52] = new Card(EnumColor.JOKER,EnumValue.JOKER);
 		deck[53] = new Card(EnumColor.JOKER,EnumValue.JOKER);
 		
