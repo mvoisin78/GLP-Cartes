@@ -19,7 +19,7 @@ public class Score {
 		}
 		else {
 			score = 0;
-			System.out.println("The player doesn't have points anymore.");
+			System.out.println("The player doesn't have any points left.");
 		}
 	}
 	
