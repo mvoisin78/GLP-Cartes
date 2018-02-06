@@ -5,8 +5,11 @@ public abstract class Player {
 	private String name;
 	private Hand hand;
 	
-	public Player() {
+	public Player(String name) {
 		hand = new Hand();
+		score = new Score();
+		this.name = name;
 	}
+	
 	
 }
