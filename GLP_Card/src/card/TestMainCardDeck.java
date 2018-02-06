@@ -7,7 +7,6 @@ public class TestMainCardDeck {
 		CardDeck deck1 = new CardDeck();
 		deck1.InitPackage();
 		deck1.shuffle();//Shuffles the deck
-		
 		for(int i=0; i<54;i++) {
 			System.out.println(deck1.getCardValue(deck1.getCard(i)) +" " + deck1.getCardColor(deck1.getCard(i)));
 		}		
