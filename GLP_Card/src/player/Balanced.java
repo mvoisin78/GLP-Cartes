@@ -2,8 +2,8 @@ package player;
 
 public class Balanced extends IAPlayer {
 	
-	public Balanced () {
-		super();
+	public Balanced (String name) {
+		super(name);
 	}
 
 }

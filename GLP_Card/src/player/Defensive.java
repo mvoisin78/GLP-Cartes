@@ -2,8 +2,8 @@ package player;
 
 public class Defensive extends IAPlayer {
 	
-	public Defensive () {
-		super();
+	public Defensive (String name) {
+		super(name);
 	}
 
 }
