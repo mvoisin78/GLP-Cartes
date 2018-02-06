@@ -11,5 +11,4 @@ public class TestMainCardDeck {
 			System.out.println(deck1.getCardValue(deck1.getCard(i)) +" " + deck1.getCardColor(deck1.getCard(i)));
 		}		
 	}
-
 }

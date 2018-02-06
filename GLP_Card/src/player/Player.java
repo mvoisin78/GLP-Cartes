@@ -10,6 +10,4 @@ public abstract class Player {
 		score = new Score();
 		this.name = name;
 	}
-	
-	
 }
