@@ -27,7 +27,7 @@ public class Draw {
 		Collections.shuffle(draw);
 	}
 	
-	public ArrayList getDraw () {
+	public ArrayList<Card> getDraw () {
 		return draw;
 	}
 
