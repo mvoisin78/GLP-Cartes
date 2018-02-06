@@ -23,7 +23,7 @@ public class Draw {
 		for (i=0 ; i<54 ; i++){		 
 			draw.add(deck.getCard(i));
 		}
-		//
+		
 		Collections.shuffle(draw);
 	}
 
