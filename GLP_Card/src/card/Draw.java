@@ -26,5 +26,9 @@ public class Draw {
 		
 		Collections.shuffle(draw);
 	}
+	
+	public ArrayList getDraw () {
+		return draw;
+	}
 
 }
