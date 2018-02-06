@@ -16,7 +16,7 @@ public class History {
 		return discardPile;
 	}
 	
-	public Card getLastCard(){ //get the last card
+	public Card getLastCard(){ 
 		return discardPile.get(discardPile.size());
 	}
 }
