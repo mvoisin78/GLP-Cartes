@@ -38,13 +38,4 @@ public class CardDeck {
 		return card.getColor();
 	}
 	
-	//Shuffles the cards present in the deck
-	/*public void shuffle() {
-		for (int i = deck.length-1 ; i>0 ; i--) {
-			int rand = (int)(Math.random()*(i+1));
-			Card temp = deck[i];
-			deck[i]=deck[rand];
-			deck[rand]=temp;
-		}
-	}*/
 }
