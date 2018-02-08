@@ -10,6 +10,7 @@ public class Draw {
 	
 	public Draw () {
 		draw = new ArrayList<Card>();
+		deck = new CardDeck();
 		deck.InitPackage();
 	}
 	
@@ -29,6 +30,10 @@ public class Draw {
 	
 	public ArrayList<Card> getDraw () {
 		return draw;
+	}
+	
+	public Card getCard(int x) {
+		return draw.get(x);
 	}
 
 }
