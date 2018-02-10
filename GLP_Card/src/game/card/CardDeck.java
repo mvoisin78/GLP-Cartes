@@ -1,4 +1,4 @@
-package card;
+package game.card;
 
 public class CardDeck {
 	private Card[] deck;

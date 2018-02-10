@@ -1,8 +1,8 @@
-package player;
+package game.player;
 
 import java.util.ArrayList;
 
-import card.Card;
+import game.card.Card;
 
 public class Hand {
 	private ArrayList<Card> hand;

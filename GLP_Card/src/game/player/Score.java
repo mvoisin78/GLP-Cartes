@@ -1,4 +1,4 @@
-package player;
+package game.player;
 
 public class Score {
 	private final static int BASELINE_SCORE = 100;

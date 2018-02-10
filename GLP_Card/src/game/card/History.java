@@ -1,4 +1,4 @@
-package card;
+package game.card;
 
 import java.util.ArrayList;
 public class History {
