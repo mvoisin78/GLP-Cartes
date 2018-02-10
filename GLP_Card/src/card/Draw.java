@@ -39,5 +39,6 @@ public class Draw {
 	public int getDrawSize() {
 		return draw.size();
 	}
+	
 
 }
