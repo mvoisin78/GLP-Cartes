@@ -35,5 +35,9 @@ public class Draw {
 	public Card getCard(int x) {
 		return draw.get(x);
 	}
+	
+	public int getDrawSize() {
+		return draw.size();
+	}
 
 }
