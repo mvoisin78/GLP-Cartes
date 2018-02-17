@@ -8,7 +8,7 @@ public class TestMainCardDeck {
 		Draw draw = new Draw();
 		History history = new History();
 		Hand hand = new Hand();
-		Probability proba = new Probability(draw, history, hand);
+		Probability proba = new Probability();
 		
 		draw.init();
 		draw.shuffle();
@@ -24,10 +24,11 @@ public class TestMainCardDeck {
 			System.out.println(hand.getCardHand(index).getValue());
 		}
 		System.out.println("--------------------------------------");
-		EnumValue playedCard = hand.getCardHand(1).getValue();
+		EnumValue playedCard = hand.getCardHand(0).getValue();
 		System.out.println("Card played = " + playedCard);
-		hand.removeCard(1);
-		proba.followRisk(playedCard);
+		hand.removeCard(0);
+		history.addCard(hand.getCardHand(0));
+		proba.followRisk(playedCard, hand, history);
 		
 	}
 }

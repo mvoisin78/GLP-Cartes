@@ -2,27 +2,21 @@ package game.card;
 import game.player.*;
 
 public class Probability {
-	private History history;
-	private Draw draw;
 	private int probability;
-	private Hand hand;
 	
-	public Probability(Draw draw, History history, Hand hand){
-		this.draw = draw;
-		this.history = history;
-		this.hand = hand;
+	public Probability(){
 		probability = 3;
 	}
 	
-	public void followRisk(EnumValue playedCard){
-		historyProba(playedCard);
-		handProba(playedCard);
+	public void followRisk(EnumValue playedCard, Hand hand, History history){
+		historyProba(playedCard, history);
+		handProba(playedCard, hand);
 		System.out.println("Number of card that can follow this in draw = " + probability);
 	}
 	
-	public void historyProba(EnumValue playedCard) { //Increment for each card who follow the played Card in the History
+	public void historyProba(EnumValue playedCard, History history) { //Increment for each card who follow the played Card in the History
 		int index;
-		int historySize = history.getSizeHistory();
+		int historySize = history.getSizeHistory() - 1; //removed the last card played (PlayedCard)
 		Card sameCard; // Compared card for find same
 		EnumValue sameCardValue;
 		int followCardValue;
@@ -41,7 +35,7 @@ public class Probability {
 		}
 	}
 	
-	public void handProba(EnumValue playedCard) { // Decrement for each card who follow the played Card in the player's hand
+	public void handProba(EnumValue playedCard, Hand hand) { // Decrement for each card who follow the played Card in the player's hand
 		int index;
 		int handSize = hand.getSizeHand();
 		int followCardValue;
@@ -62,5 +56,3 @@ public class Probability {
 		}
 	}
 }
-
-// cartes en main - Carte History - Nbr de carte dans les mains adverses 
