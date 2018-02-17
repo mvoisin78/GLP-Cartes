@@ -24,7 +24,9 @@ public class Draw {
 		for (i=0 ; i<54 ; i++){		 
 			draw.add(deck.getCard(i));
 		}
-		
+	}
+	
+	public void Shuffle() {
 		Collections.shuffle(draw);
 	}
 	
