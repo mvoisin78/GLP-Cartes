@@ -42,5 +42,8 @@ public class Draw {
 		return draw.size();
 	}
 	
+	public void deleteCard(int index) {
+		draw.remove(index);
+	}
 
 }

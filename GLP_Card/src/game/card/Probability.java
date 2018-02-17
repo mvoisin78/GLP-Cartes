@@ -11,23 +11,23 @@ public class Probability {
 		this.draw = draw;
 		this.history = history;
 		this.hand = hand;
-		probability = 54;
+		probability = 3;
 	}
 	
-	public void followRisk(Card playedCard){
+	public void followRisk(EnumValue playedCard){
 		historyProba(playedCard);
 		handProba(playedCard);
+		System.out.println("Number of card that can follow this in draw = " + probability);
 	}
 	
-	public void historyProba(Card playedCard) { //Increment for each card who follow the played Card in the History
+	public void historyProba(EnumValue playedCard) { //Increment for each card who follow the played Card in the History
 		int index;
 		int historySize = history.getSizeHistory();
 		Card sameCard; // Compared card for find same
 		EnumValue sameCardValue;
 		int followCardValue;
 		
-		EnumValue playedCardEnumValue = playedCard.getValue();
-		int playedCardValue = playedCardEnumValue.getEnumValue() + 1; // The EnumValue +1 (following) for the played card
+		int playedCardValue = playedCard.getEnumValue() + 1; // The EnumValue +1 (following) for the played card
 	
 		for (index = 0; index < historySize; index++) {
 			
@@ -41,15 +41,14 @@ public class Probability {
 		}
 	}
 	
-	public void handProba(Card playedCard) { // Decrement for each card who follow the played Card in the player's hand
+	public void handProba(EnumValue playedCard) { // Decrement for each card who follow the played Card in the player's hand
 		int index;
 		int handSize = hand.getSizeHand();
 		int followCardValue;
 		Card sameCard;
 		EnumValue sameCardValue;
 		
-		EnumValue playedCardEnumValue = playedCard.getValue();
-		int playedCardValue = playedCardEnumValue.getEnumValue() + 1; // The EnumValue +1 (following) for the played card
+		int playedCardValue = playedCard.getEnumValue() + 1; // The EnumValue +1 (following) for the played card
 	
 		for (index = 0; index < handSize; index++) {
 			
@@ -58,7 +57,7 @@ public class Probability {
 			followCardValue = sameCardValue.getEnumValue() + 1; //The EnumValue +1 (following) for each card in the players hand
 			
 			if(playedCardValue == followCardValue) {
-					probability --;
+				probability --;
 			}
 		}
 	}

@@ -34,4 +34,8 @@ public class Hand {
 	public Card getCardHand(int index) {
 		return hand.get(index);
 	}
+	
+	public void removeCard(int index) {
+		hand.remove(index);
+	}
 }
