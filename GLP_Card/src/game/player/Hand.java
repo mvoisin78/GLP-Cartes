@@ -22,12 +22,16 @@ public class Hand {
 	}
 	
 	//Returns the number of cards in the hand
-	public int getNumberOfCards() {
+	public int getSizeHand() {
 		return hand.size();
 	}
 	
 	//Checks if the hand is empty or not
 	public boolean isEmpty() {
 		return hand.isEmpty();
+	}
+	
+	public Card getCardHand(int index) {
+		return hand.get(index);
 	}
 }

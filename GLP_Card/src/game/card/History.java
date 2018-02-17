@@ -1,6 +1,7 @@
 package game.card;
 
 import java.util.ArrayList;
+
 public class History {
 	private ArrayList<Card> discardPile;
 	
@@ -18,5 +19,13 @@ public class History {
 	
 	public Card getLastCard(){ 
 		return discardPile.get(discardPile.size());
+	}
+	
+	public Card getCardHistory(int index){ 
+		return discardPile.get(index);
+	}
+	
+	public int getSizeHistory() {
+		return discardPile.size();
 	}
 }
