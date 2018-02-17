@@ -10,5 +10,6 @@ public class TestMainCardDeck {
 		for(int i=0; i<54;i++) {
 			System.out.println(draw.getCard(i).getValue() +"    " + draw.getCard(i).getColor());
 		}		
+		
 	}
 }
