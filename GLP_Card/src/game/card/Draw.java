@@ -26,6 +26,7 @@ public class Draw {
 		}
 	}
 	
+	
 	public void Shuffle() {
 		Collections.shuffle(draw);
 	}
