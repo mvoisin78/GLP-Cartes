@@ -14,7 +14,6 @@ public class Probability {
 		probability = 54;
 	}
 	
-	
 	public void followRisk(Card playedCard){
 		historyProba(playedCard);
 		handProba(playedCard);
