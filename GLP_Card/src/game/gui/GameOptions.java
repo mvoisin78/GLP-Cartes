@@ -47,7 +47,7 @@ public class GameOptions extends JFrame implements ActionListener {
 			public void actionPerformed (ActionEvent e) {
 				JComboBox box = (JComboBox)e.getSource();
 				String msg = (String)box.getSelectedItem();
-				switch (msg) {
+				switch (msg) { //Cases
 				case "2 joueurs": labelText.setText("You can select up to 3 players.");
 					break;
 				case "3 joueurs": labelText.setText("You can select up to 2 players.");
