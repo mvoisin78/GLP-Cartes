@@ -3,15 +3,17 @@ import game.player.*;
 
 public class Probability {
 	private int probability;
+	private int nbrJoueurs;
 	
-	public Probability(){
+	public Probability(int nbrJoueurs){
 		probability = 3;
+		this.nbrJoueurs = nbrJoueurs;
 	}
 	
 	public void followRisk(EnumValue playedCard, Hand hand, History history){
 		historyProba(playedCard, history);
 		handProba(playedCard, hand);
-		System.out.println("Number of card that can follow this in draw = " + probability);
+		System.out.println("Number of card that can follow this in draw and other players hand = " + probability);
 	}
 	
 	public void historyProba(EnumValue playedCard, History history) { //Increment for each card who follow the played Card in the History
@@ -30,7 +32,7 @@ public class Probability {
 			followCardValue = sameCardValue.getEnumValue() + 1; //The EnumValue +1 (following) for each card in the players hand
 			
 			if(playedCardValue == followCardValue) {
-					probability --;
+					//probability --;
 			}
 		}
 	}
@@ -55,4 +57,5 @@ public class Probability {
 			}
 		}
 	}
+	
 }
