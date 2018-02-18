@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Main extends JFrame implements ActionListener {
+	
 	private JMenuBar jmb = new JMenuBar();
 	private JMenu jmFile = new JMenu("File");
 	private	JMenu jmHelp = new JMenu("Help");
@@ -35,7 +36,7 @@ public class Main extends JFrame implements ActionListener {
 		this.setSize(400, 600);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-	    container.setLayout(null);
+		container.setLayout(null);
 	    this.add(container);
 		
 	    playButton.setBounds(115, 125, 150, 50);

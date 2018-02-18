@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class GameOptions extends JFrame implements ActionListener {
+	
 	private JPanel container = new JPanel();
 	private JComboBox list;
 	private	JButton enterButton = new JButton("Enter");
@@ -29,17 +30,15 @@ public class GameOptions extends JFrame implements ActionListener {
 		Object[] elements = new Object[] {"2 joueurs", "3 joueurs", "4 joueurs", "5 joueurs"};
 		list = new JComboBox(elements);
 		
-		list.setBounds(140, 0, 100, 30);
 		playersLabel.setBounds(60, 0, 100, 30);
-		labelText.setBounds(60, 50, 200, 30);
-		IALabel.setBounds(60, 100, 100, 30);
+		list.setBounds(140, 0, 100, 25);
+		labelText.setBounds(60, 30, 200, 30);
+		IALabel.setBounds(60, 60, 100, 30);
 	    container.add(playersLabel);
 		container.add(list);
 		container.add(IALabel);
 		container.add(labelText);
 		
-		
-
 	    enterButton.setBounds(120, 250, 100, 30);
 	    container.add(enterButton);
 	    
@@ -47,7 +46,7 @@ public class GameOptions extends JFrame implements ActionListener {
 			public void actionPerformed (ActionEvent e) {
 				JComboBox box = (JComboBox)e.getSource();
 				String msg = (String)box.getSelectedItem();
-				switch (msg) { //Cases
+				switch (msg) { 
 				case "2 joueurs": labelText.setText("You can select up to 3 players.");
 					break;
 				case "3 joueurs": labelText.setText("You can select up to 2 players.");
@@ -63,6 +62,4 @@ public class GameOptions extends JFrame implements ActionListener {
 	    
 		this.setVisible(true);
 	}
-
 }
-
