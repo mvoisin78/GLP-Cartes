@@ -70,7 +70,7 @@ public class Main extends JFrame implements ActionListener {
 		public void actionPerformed (ActionEvent e) {
 			if(Desktop.getDesktop().isSupported(java.awt.Desktop.Action.OPEN)){
 				try {
-					File f = new File("resources/readme.txt");
+					File f = new File("../resources/readme.txt");
 					java.awt.Desktop.getDesktop().open(f);
 				} catch (IOException ex) {
 					ex.printStackTrace();

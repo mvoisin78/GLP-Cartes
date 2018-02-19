@@ -1,22 +1,34 @@
 package game.gui;
 
+import game.card.TestMainCardDeck;
+
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class GameOptions extends JFrame implements ActionListener {
 	
 	private JPanel container = new JPanel();
-	private JComboBox list;
+	private JComboBox totalBox;
+	private JComboBox humanBoxV1;
+	private JComboBox humanBoxV2;
+	private JComboBox humanBoxV3;
 	private	JButton enterButton = new JButton("Enter");
 	private JLabel playersLabel = new JLabel("Total players");
-	private JLabel labelText = new JLabel();
-	private JLabel IALabel = new JLabel("Human players");
+	private JLabel labelText = new JLabel("You can select up to 3 human players.");
+	private JLabel humanLabel = new JLabel("Human players");
+	private JLabel nameText = new JLabel("Human names");
+	private JTextField jtf = new JTextField("");
+//	private JTextField jtf2 = new JTextField("");
+	private int value;
 	
 	public GameOptions() {
 		this.setTitle("Game Options");
@@ -26,38 +38,84 @@ public class GameOptions extends JFrame implements ActionListener {
 		container.setLayout(null);
 		this.add(container);
 
-	    
 		Object[] elements = new Object[] {"2 joueurs", "3 joueurs", "4 joueurs", "5 joueurs"};
-		list = new JComboBox(elements);
+		totalBox = new JComboBox(elements);
+		
+		Object[] elements2 = new Object[] {"1 joueur", "2 joueurs", "3 joueurs", "4 joueurs"};
+		humanBoxV1 = new JComboBox(elements2);
+		
 		
 		playersLabel.setBounds(60, 0, 100, 30);
-		list.setBounds(140, 0, 100, 25);
-		labelText.setBounds(60, 30, 200, 30);
-		IALabel.setBounds(60, 60, 100, 30);
+		totalBox.setBounds(160, 5, 100, 25);
+		labelText.setBounds(60, 30, 250, 30);
+		nameText.setBounds(130, 84, 100, 30);
+		humanLabel.setBounds(60, 60, 100, 30);
+		humanBoxV1.setBounds(160, 65, 100, 25);
+		
 	    container.add(playersLabel);
-		container.add(list);
-		container.add(IALabel);
+		container.add(totalBox);
+		container.add(humanLabel);
 		container.add(labelText);
+		container.add(humanBoxV1);
+		container.add(jtf);
+//		container.add(jtf2);
+
 		
 	    enterButton.setBounds(120, 250, 100, 30);
 	    container.add(enterButton);
 	    
-	    list.addActionListener(new ActionListener() {
+	    totalBox.addActionListener(new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
 				JComboBox box = (JComboBox)e.getSource();
 				String msg = (String)box.getSelectedItem();
 				switch (msg) { 
-				case "2 joueurs": labelText.setText("You can select up to 3 players.");
+				case "2 joueurs":
+					labelText.setText("You can select up to 1 player.");
+					container.add(nameText);
+					humanBoxV1.removeAllItems();
+					humanBoxV1.addItem("1 joueur");
+					jtf.setBounds(130, 115, 80, 30);
+					value = 2;
 					break;
-				case "3 joueurs": labelText.setText("You can select up to 2 players.");
+				case "3 joueurs":
+					labelText.setText("You can select up to 2 players.");
+					humanBoxV1.removeAllItems();
+					humanBoxV1.addItem("1 joueur");
+					humanBoxV1.addItem("2 joueurs");
+//					jtf.setBounds(130, 115, 80, 25);
+//					jtf2.setBounds(130, 140, 80, 25);
+					value = 3;
 					break;
-				case "4 joueurs": labelText.setText("You can select up to 1 player.");
+				case "4 joueurs":
+					labelText.setText("You can select up to 3 players.");
+					humanBoxV1.removeAllItems();
+					humanBoxV1.addItem("1 joueur");
+					humanBoxV1.addItem("2 joueurs");
+					humanBoxV1.addItem("3 joueurs");
+					value = 4;
 					break;
-				case "5 joueurs": labelText.setText("You can't select more player.");
+				case "5 joueurs":
+					labelText.setText("You can select up to 4 players.");
+					humanBoxV1.removeAllItems();
+					humanBoxV1.addItem("1 joueur");
+					humanBoxV1.addItem("2 joueurs");
+					humanBoxV1.addItem("3 joueurs");					
+					humanBoxV1.addItem("4 joueurs");	
+					value = 5;
 					break;
-				default: labelText.setText("Whoops, we seem to have an error.");
+				default:
+					labelText.setText("Whoops, we seem to have an error.");
+					break;
 				}
 			}
+	    });
+	    
+	    
+	    
+	    enterButton.addActionListener(new ActionListener() {
+	    	public void actionPerformed (ActionEvent e) {
+	    		new TestMainCardDeck(value);
+	    	}
 	    });
 	    
 		this.setVisible(true);
