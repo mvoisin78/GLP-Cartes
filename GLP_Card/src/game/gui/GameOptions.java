@@ -27,8 +27,8 @@ public class GameOptions extends JFrame implements ActionListener {
 	private JLabel humanLabel = new JLabel("Human players");
 	private JLabel nameText = new JLabel("Human names");
 	private JTextField jtf = new JTextField("");
-//	private JTextField jtf2 = new JTextField("");
 	private int value;
+//	private JTextField jtf2 = new JTextField("");
 	
 	public GameOptions() {
 		this.setTitle("Game Options");
