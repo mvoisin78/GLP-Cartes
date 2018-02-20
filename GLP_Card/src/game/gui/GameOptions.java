@@ -118,7 +118,7 @@ public class GameOptions extends JFrame implements ActionListener {
 	    
 	    enterButton.addActionListener(new ActionListener() {
 	    	public void actionPerformed (ActionEvent e) {
-	    		new TestMainCardDeck(value);
+	    		new GameBoard();
 	    	}
 	    });
 	    

@@ -50,7 +50,7 @@ public class GameBoard {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(0, 128, 0));
