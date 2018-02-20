@@ -47,9 +47,9 @@ public class GameOptions extends JFrame implements ActionListener {
 		
 		playersLabel.setBounds(60, 0, 100, 30);
 		totalBox.setBounds(160, 5, 100, 25);
-		labelText.setBounds(60, 30, 250, 30);
+		labelText.setBounds(60, 30, 300, 30);
 		nameText.setBounds(130, 84, 100, 30);
-		humanLabel.setBounds(60, 60, 100, 30);
+		humanLabel.setBounds(50, 60, 150, 30);
 		humanBoxV1.setBounds(160, 65, 100, 25);
 		
 	    container.add(playersLabel);
