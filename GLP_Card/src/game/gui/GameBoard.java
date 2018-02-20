@@ -26,6 +26,7 @@ public class GameBoard {
 			public void run() {
 				try {
 					GameBoard window = new GameBoard();
+					window.frame.setTitle("Tu n'y peux rien ! ");
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
