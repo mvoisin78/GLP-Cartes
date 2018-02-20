@@ -18,14 +18,17 @@ import javax.swing.JTextField;
 
 public class Main extends JFrame implements ActionListener {
 	
+	//Added different functionalities
 	private JMenuBar jmb = new JMenuBar();
 	private JMenu jmFile = new JMenu("File");
 	private	JMenu jmHelp = new JMenu("Help");
 	private JMenuItem jmiExit = new JMenuItem("Exit");
 	private JMenuItem jmiAbout = new JMenuItem("About");
 
+	//Created container
 	private	JPanel container = new JPanel();
 
+	//Buttons created
 	private	JButton playButton = new JButton("Play");
 	private JButton helpButton = new JButton("Help");
 	private JButton quitButton = new JButton("Quit");
@@ -66,6 +69,7 @@ public class Main extends JFrame implements ActionListener {
 		this.setVisible(true);    
 	}
 	
+	//Action listeners
 	static class HelpAction implements ActionListener {
 		public void actionPerformed (ActionEvent e) {
 			if(Desktop.getDesktop().isSupported(java.awt.Desktop.Action.OPEN)){
