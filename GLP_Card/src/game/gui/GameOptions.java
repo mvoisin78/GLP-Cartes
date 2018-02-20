@@ -17,10 +17,14 @@ import javax.swing.JTextField;
 public class GameOptions extends JFrame implements ActionListener {
 	
 	private JPanel container = new JPanel();
+	
+	//ComboBoxes
 	private JComboBox totalBox;
 	private JComboBox humanBoxV1;
 	private JComboBox humanBoxV2;
 	private JComboBox humanBoxV3;
+	
+	//Buttons and text stuff
 	private	JButton enterButton = new JButton("Enter");
 	private JLabel playersLabel = new JLabel("Total players");
 	private JLabel labelText = new JLabel("You can select up to 3 human players.");
