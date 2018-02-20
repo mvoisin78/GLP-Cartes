@@ -58,13 +58,31 @@ public class GameBoard {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		JLabel lblImage = new JLabel("");
-		Icon img = new ImageIcon("../resources/images/clubs0.gif");
+		Icon img = new ImageIcon("../resources/images/clubs6.gif");
 		lblImage.setIcon(img);
 		GridBagConstraints gbc_lblImage = new GridBagConstraints();
 		gbc_lblImage.insets = new Insets(5, 5, 5, 5);
 		gbc_lblImage.gridx = 4;
 		gbc_lblImage.gridy = 3;
 		frame.getContentPane().add(lblImage, gbc_lblImage);
+		
+		JLabel face = new JLabel("");
+		Icon faceCard = new ImageIcon("../resources/images/cover.gif");
+		face.setIcon(faceCard);
+		GridBagConstraints gbc_face = new GridBagConstraints();
+		gbc_face.insets = new Insets(5, 5, 5, 5);
+		gbc_face.gridx = 6;
+		gbc_face.gridy = 7;
+		frame.getContentPane().add(face, gbc_face);
+		
+		JLabel hand = new JLabel("");
+		Icon handCard = new ImageIcon("../resources/images/clubs0.gif");
+		hand.setIcon(handCard);
+		GridBagConstraints gbc_hand = new GridBagConstraints();
+		gbc_hand.insets = new Insets(5, 5, 5, 5);
+		gbc_hand.gridx = 5;
+		gbc_hand.gridy = 7;
+		frame.getContentPane().add(hand, gbc_hand);
 		
 		JLabel label = new JLabel("");
 		Icon autre = new ImageIcon("../resources/images/spades2.gif");
