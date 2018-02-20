@@ -80,7 +80,7 @@ public class GameBoard {
 		GridBagConstraints gbc_lblTest = new GridBagConstraints();
 		gbc_lblTest.insets = new Insets(5, 5, 5, 5);
 		gbc_lblTest.gridx = 6;
-		gbc_lblTest.gridy = 3;
+		gbc_lblTest.gridy = 3; //
 		frame.getContentPane().add(lblTest, gbc_lblTest);
 
 	}
