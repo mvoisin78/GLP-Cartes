@@ -1,19 +1,9 @@
-
 package game.card;
-import java.awt.List;
-import java.util.ArrayList;
-
 import game.player.*;
 
 public class TestMainCardDeck {
-	private int value;
-	
-	public TestMainCardDeck(int value) {	
-		
-//		ArrayList<Player> players = new ArrayList<Player>(); //Creates AL of players, still in creation
-//		for (int k = 1 ; k<=value ; k++) {
-//			players.add(new HumanPlayer("Joueur " +k));
-//		}
+
+	public static void main(String[] args) {
 		
 		Draw draw = new Draw();
 		History history = new History();
@@ -49,5 +39,6 @@ public class TestMainCardDeck {
 		j1.getHand().removeCard(0);
 		history.addCard(j1.getHand().getCardHand(0));
 		proba.followRisk(playedCard, j1.getHand(), history);
-		}
+		
 	}
+}
