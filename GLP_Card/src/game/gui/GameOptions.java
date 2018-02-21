@@ -45,7 +45,7 @@ public class GameOptions extends JFrame implements ActionListener {
 		Object[] elements = new Object[] {"2 joueurs", "3 joueurs", "4 joueurs", "5 joueurs"};
 		totalBox = new JComboBox(elements);
 		
-		Object[] elements2 = new Object[] {"1 joueur", "2 joueurs", "3 joueurs", "4 joueurs"};
+		Object[] elements2 = new Object[] {"1 joueur", "2 joueurs", "3 joueurs", "4 joueurs", "5 joueurs"};
 		humanBoxV1 = new JComboBox(elements2);
 		
 		
@@ -74,37 +74,41 @@ public class GameOptions extends JFrame implements ActionListener {
 				String msg = (String)box.getSelectedItem();
 				switch (msg) { 
 				case "2 joueurs":
-					labelText.setText("You can select up to 1 player.");
+					labelText.setText("You can select up to 2 player.");
 					container.add(nameText);
 					humanBoxV1.removeAllItems();
 					humanBoxV1.addItem("1 joueur");
+					humanBoxV1.addItem("2 joueur");
 					jtf.setBounds(130, 115, 80, 30);
 					value = 2;
 					break;
 				case "3 joueurs":
-					labelText.setText("You can select up to 2 players.");
-					humanBoxV1.removeAllItems();
-					humanBoxV1.addItem("1 joueur");
-					humanBoxV1.addItem("2 joueurs");
-//					jtf.setBounds(130, 115, 80, 25);
-//					jtf2.setBounds(130, 140, 80, 25);
-					value = 3;
-					break;
-				case "4 joueurs":
 					labelText.setText("You can select up to 3 players.");
 					humanBoxV1.removeAllItems();
 					humanBoxV1.addItem("1 joueur");
 					humanBoxV1.addItem("2 joueurs");
 					humanBoxV1.addItem("3 joueurs");
-					value = 4;
+//					jtf.setBounds(130, 115, 80, 25);
+//					jtf2.setBounds(130, 140, 80, 25);
+					value = 3;
 					break;
-				case "5 joueurs":
+				case "4 joueurs":
 					labelText.setText("You can select up to 4 players.");
 					humanBoxV1.removeAllItems();
 					humanBoxV1.addItem("1 joueur");
 					humanBoxV1.addItem("2 joueurs");
+					humanBoxV1.addItem("3 joueurs");
+					humanBoxV1.addItem("4 joueurs");
+					value = 4;
+					break;
+				case "5 joueurs":
+					labelText.setText("You can select up to 5 players.");
+					humanBoxV1.removeAllItems();
+					humanBoxV1.addItem("1 joueur");
+					humanBoxV1.addItem("2 joueurs");
 					humanBoxV1.addItem("3 joueurs");					
-					humanBoxV1.addItem("4 joueurs");	
+					humanBoxV1.addItem("4 joueurs");
+					humanBoxV1.addItem("5 joueurs");
 					value = 5;
 					break;
 				default:
