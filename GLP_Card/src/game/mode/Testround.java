@@ -14,7 +14,6 @@ public class Testround {
 	Player p3 = new HumanPlayer("J3");
 	Player p4 = new HumanPlayer("J4");
 	Player p5 = new HumanPlayer("J5");
-
 	
 	public Testround(int nbPlayers) {
 		
