@@ -1,6 +1,7 @@
 package game.gui;
 
 import game.card.TestMainCardDeck;
+import game.mode.Testround;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -122,7 +123,7 @@ public class GameOptions extends JFrame implements ActionListener {
 	    
 	    enterButton.addActionListener(new ActionListener() {
 	    	public void actionPerformed (ActionEvent e) {
-	    		new GameBoard();
+	    		new Testround(value);
 	    	}
 	    });
 	    
