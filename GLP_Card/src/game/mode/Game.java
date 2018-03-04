@@ -105,22 +105,22 @@ public class Game {
 				foCard = playedCards.get(3).getValue().getEnumValue(); // Fourth card value
 				fiCard = playedCards.get(4).getValue().getEnumValue(); // Fifth card value
 				if(fCard + 1 == sCard && sCard + 1 == tCard && tCard + 1 == foCard && foCard +1 == fiCard) {
-					return 5; // 5 => Set of 4 cards
+					return 6; // 6 => Set of 5 cards
 				}
 				else if(fCard == 17 && (sCard + 1 == tCard) && (tCard +1 == foCard) && (foCard + 1 == fiCard)) { // If the first card is a Joker
-					return 5;
+					return 6;
 				}
 				else if(sCard == 17 && (fCard + 2 == tCard) && (tCard +1 == foCard) && (foCard + 1 == fiCard)) { // If the second card is a Joker
-					return 5;
+					return 6;
 				}
 				else if(tCard == 17 && (fCard + 1 == sCard) && (sCard +2 == foCard) && (foCard + 1 == fiCard)) { // If the third card is a Joker
-					return 5;
+					return 6;
 				}
 				else if(foCard == 17 && (fCard + 1 == sCard) && (sCard +1 == tCard) && (tCard + 2 == fiCard)) { // If the fourth card is a Joker
-					return 5;
+					return 6;
 				}
 				else if(fiCard == 17 && (fCard + 1 == sCard) && (sCard +1 == tCard) && (tCard + 1 == foCard)) { // If the fifth card is a Joker
-					return 5;
+					return 6;
 				}
 				break;
 			default: 
