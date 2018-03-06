@@ -95,5 +95,4 @@ public class test extends JPanel{
     		}
     	});
     }
-    
 }
