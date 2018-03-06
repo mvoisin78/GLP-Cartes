@@ -41,13 +41,21 @@ public class Game {
 				break;
 			
 			case 2:
-				if(playedCards.get(0)==playedCards.get(1)) {
+				fCard = playedCards.get(0).getValue().getEnumValue(); //First card value
+				sCard = playedCards.get(1).getValue().getEnumValue(); //Second card value
+				if(fCard == sCard) {
 					return 1; // 1 => Double
+				}
+				else if(fCard == 17 || sCard == 17){
+					return 1;
 				}
 				break;	
 			
 			case 3:
-				if(playedCards.get(0)==playedCards.get(1) && playedCards.get(0)==playedCards.get(2)) {
+				fCard = playedCards.get(0).getValue().getEnumValue(); //First card value
+				sCard = playedCards.get(1).getValue().getEnumValue(); //Second card value
+				tCard = playedCards.get(2).getValue().getEnumValue(); // Third card value
+				if(fCard==sCard && fCard==tCard) {
 					return 3; // 3 => Triple game
 				}
 				else if(playedCards.get(0).getValue() == EnumValue.JOKER && (playedCards.get(1) == playedCards.get(2))) { // If first Card is Joker
@@ -124,9 +132,36 @@ public class Game {
 				}
 				break;
 			default: 
-				System.out.println("Try again.");
 				break;
 			}
+		System.out.println("Try again.");
 		return 666;
+	}
+	
+	public void putCard(ArrayList<Card> playedCards, int mode){
+		
+	}
+	
+	public boolean verify(int mode, ArrayList<Card> playedCards, History history){
+		int fCard, sCard, tCard, foCard, fiCard;
+		int histo;
+		switch(mode){
+			case 0:
+				fCard = playedCards.get(0).getValue().getEnumValue(); //First card value
+				histo = history.getLastCard().getValue().getEnumValue(); //Last card value of history
+				if(fCard == histo + 1){
+					return true;
+				}
+				else{
+					return false;
+				}
+			case 1:
+				fCard = playedCards.get(0).getValue().getEnumValue(); //First card value
+				sCard = playedCards.get(1).getValue().getEnumValue(); //Second card value
+				histo = history.getLastCard().getValue().getEnumValue(); //Last card value of history
+				
+			
+		}
+		return true;
 	}
 }
