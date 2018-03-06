@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class test extends JPanel{
 
@@ -44,8 +45,12 @@ public class test extends JPanel{
 		
 		JPanel aside = new JPanel();
 		aside.setBackground(Color.white);
-		aside.setBounds(900, 0, 120, 700);
+		aside.setBounds(900, 0, 220, 700);
 		frame.add(aside);
+		
+		JTextField score = new JTextField("Score :");
+		score.setEditable(false);
+		aside.add(score);
 		
 		Icon handCard = new ImageIcon("../resources/images/clubs0.gif");
 		JLabel hand = new JLabel(handCard);
