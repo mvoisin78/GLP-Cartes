@@ -14,7 +14,12 @@ import javax.swing.JTextField;
 public class test extends JPanel{
 
 	private static final long serialVersionUID = 1L;
-	private JFrame frame;
+	private JFrame frame = new JFrame();
+	private JPanel bottom = new JPanel();
+	private JPanel aside = new JPanel();
+	private JButton jouer = new JButton("Jouer");
+	private JTextField score = new JTextField("Score :");
+	
 
 	/**
 	 * Create the application.
@@ -28,27 +33,22 @@ public class test extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
 		frame.setSize(1100, 700);
 		frame.setLocationRelativeTo(null);
+		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(new Color(0, 128, 0));
 		
-		JPanel bottom = new JPanel();
-		bottom.setBackground(Color.white);
 		bottom.setBounds(0, 580, 900, 200);
 		frame.add(bottom);
 		
-		JButton jouer = new JButton("jouer");
+		
 		bottom.add(jouer);
 		
-		JPanel aside = new JPanel();
-		aside.setBackground(Color.white);
 		aside.setBounds(900, 0, 220, 700);
 		frame.add(aside);
 		
-		JTextField score = new JTextField("Score :");
 		score.setEditable(false);
 		aside.add(score);
 		
@@ -79,7 +79,7 @@ public class test extends JPanel{
         deck.setIcon(cover);
 		frame.getContentPane().add(deck);
 		
-		
+		frame.setVisible(true);
 	}
     
     /**
@@ -90,7 +90,6 @@ public class test extends JPanel{
     		public void run() {
     			try {
     				test window = new test();
-    				window.frame.setVisible(true);
     			} catch (Exception e) {
     				e.printStackTrace();
     			}
