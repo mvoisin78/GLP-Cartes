@@ -18,7 +18,7 @@ public class test extends JPanel{
 	private JPanel bottom = new JPanel();
 	private JPanel aside = new JPanel();
 	private JButton jouer = new JButton("Jouer");
-	private JTextField score = new JTextField("Score :");
+	private JLabel score = new JLabel("Score :");
 	
 
 	/**
@@ -49,7 +49,6 @@ public class test extends JPanel{
 		aside.setBounds(900, 0, 220, 700);
 		frame.add(aside);
 		
-		score.setEditable(false);
 		aside.add(score);
 		
 		Icon handCard = new ImageIcon("../resources/images/clubs0.gif");
