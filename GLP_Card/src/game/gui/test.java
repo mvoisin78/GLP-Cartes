@@ -56,7 +56,7 @@ public class test extends JPanel{
         ButtonLabel label = new ButtonLabel(handCard2);
         label.setBounds(440, 55, 103, 150);
 		frame.getContentPane().add(label);
-		
+		//
         Icon handCard3 = new ImageIcon("../resources/images/spades0.gif");
         ButtonLabel label2 = new ButtonLabel(handCard3);
         label2.setBounds(780, 55, 100, 150);
