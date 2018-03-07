@@ -25,6 +25,7 @@ public class TestMain {
         Draw draw = new Draw();
         draw.init();
         Game game = new Game(draw);
+        int index;
         
         Scanner sc = new Scanner(System.in);
         do{
@@ -71,7 +72,7 @@ public class TestMain {
             Player currentPlayer = pIterator.next();
             Hand currentPlayerHand = currentPlayer.getHand();
             System.out.println("--------------------------------------");
-            for(int index=0; index< currentPlayerHand.getSizeHand();index++) {
+            for(index=0; index< currentPlayerHand.getSizeHand();index++) {
                 System.out.println(index + "-" + currentPlayerHand.getCardHand(index).getValue());
             }
         }
@@ -80,7 +81,7 @@ public class TestMain {
         int tmp = str;
         ArrayList<Integer> usedCard = new ArrayList<>(); 
         
-        for(int index = 1; index<tmp+1; index ++) {
+        for(index = 1; index<tmp+1; index ++) {
         	do {
         		System.out.println("Carte numéro " +index+ " ? :");
         		str = sc.nextInt(); 		
@@ -112,6 +113,13 @@ public class TestMain {
 			case 6:
 				System.out.println("Série de cinq cartes");
 				break;
+			default:
+				System.err.println("erreur");
+				break;
+		}
+		for(index = 0; index<tmp; index++) {
+			System.out.println("Carte joué n°" + index + " : ");
+			System.out.println(playedCard.get(index).getValue());
 		}
         sc.close();
     }
