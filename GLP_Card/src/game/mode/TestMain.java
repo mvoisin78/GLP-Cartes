@@ -77,32 +77,18 @@ public class TestMain {
         }
         System.out.println("Cb de cartes?");
         int str = sc.nextInt();
-        switch (str){
-        case 1:
-            System.out.println("Quelle carte?");
-            str = sc.nextInt();
-            playedCard.add(p1.getHand().getCardHand(str));
-            break;
-        case 2:
-            System.out.println("1ere carte?");
-            str = sc.nextInt();
-            playedCard.add(p1.getHand().getCardHand(str));
-            System.out.println("2eme carte?");
-            str = sc.nextInt();
-            playedCard.add(p1.getHand().getCardHand(str));
-            break;
-        case 3:
-            System.out.println("1ere carte?");
-            str = sc.nextInt();
-            playedCard.add(p1.getHand().getCardHand(str));
-            System.out.println("2eme carte?");
-            str = sc.nextInt();
-            playedCard.add(p1.getHand().getCardHand(str));
-            System.out.println("3eme carte?");
-            str = sc.nextInt();
-            playedCard.add(p1.getHand().getCardHand(str));
-            break;
+        int tmp = str;
+        ArrayList<Integer> usedCard = new ArrayList<>(); 
+        
+        for(int index = 1; index<tmp+1; index ++) {
+        	do {
+        		System.out.println("Carte numéro " +index+ " ? :");
+        		str = sc.nextInt(); 		
+        	}while(usedCard.contains(str));
+        	usedCard.add(str);
+        	playedCard.add(p1.getHand().getCardHand(str));
         }
+       
         int mode = game.detectGameMode(playedCard);
 		switch(mode){
 			case 0:
