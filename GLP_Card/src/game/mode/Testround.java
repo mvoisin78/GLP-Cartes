@@ -79,19 +79,19 @@ public class Testround {
 				System.out.println("Mode de jeu: Double");
 				break;
 			case 2:
-				System.out.println("Mode de jeu: SÃ©rie de deux cartes");
+				System.out.println("Mode de jeu: Série de deux cartes");
 				break;
 			case 3:
 				System.out.println("Mode de jeu: Triple");
 				break;
 			case 4:
-				System.out.println("Mode de jeu: SÃ©rie de trois cartes");
+				System.out.println("Mode de jeu: Série de trois cartes");
 				break;
 			case 5:
-				System.out.println("SÃ©rie de quatres cartes");
+				System.out.println("Série de quatres cartes");
 				break;
 			case 6:
-				System.out.println("SÃ©rie de cinq cartes");
+				System.out.println("Série de cinq cartes");
 				break;
 		}
 	}
