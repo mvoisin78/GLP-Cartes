@@ -117,9 +117,9 @@ public class TestMain {
 				System.err.println("erreur");
 				break;
 		}
-		for(index = 0; index<tmp; index++) {
+		for(index = 1; index<=tmp; index++) {
 			System.out.println("Carte joué n°" + index + " : ");
-			System.out.println(playedCard.get(index).getValue());
+			System.out.println(playedCard.get(index-1).getValue());
 		}
         sc.close();
     }
