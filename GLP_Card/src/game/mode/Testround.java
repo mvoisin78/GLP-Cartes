@@ -14,6 +14,7 @@ public class Testround {
 	Player p3 = new HumanPlayer("J3");
 	Player p4 = new HumanPlayer("J4");
 	Player p5 = new HumanPlayer("J5");
+	ArrayList<Card> playedCard = new ArrayList<>();
 	
 	public Testround(int nbPlayers) {
 		
@@ -62,7 +63,38 @@ public class Testround {
 				System.out.println(currentPlayerHand.getCardHand(index).getValue());
 			}
 		}
-		
+		System.out.println("--------------------------------------");
+		Card c1 = new Card(EnumColor.DIAMOND, EnumValue.FIVE);
+		Card c2 = new Card(EnumColor.DIAMOND, EnumValue.FIVE);
+		Card c3 = new Card(EnumColor.DIAMOND, EnumValue.FIVE);
+		playedCard.add(c1);
+		playedCard.add(c2);
+		playedCard.add(c3);
+		int mode = game.detectGameMode(playedCard);
+		switch(mode){
+			case 0:
+				System.out.println("Mode de jeu: Simple");
+				break;
+			case 1:
+				System.out.println("Mode de jeu: Double");
+				break;
+			case 2:
+				System.out.println("Mode de jeu: Série de deux cartes");
+				break;
+			case 3:
+				System.out.println("Mode de jeu: Triple");
+				break;
+			case 4:
+				System.out.println("Mode de jeu: Série de trois cartes");
+				break;
+			case 5:
+				System.out.println("Série de quatres cartes");
+				break;
+			case 6:
+				System.out.println("Série de cinq cartes");
+				break;
+		}
 	}
 
 }
+
