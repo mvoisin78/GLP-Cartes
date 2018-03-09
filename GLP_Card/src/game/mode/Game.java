@@ -11,6 +11,7 @@ public class Game {
 	int index;
 	Hand currentPlayerHand;
 	Draw draw;
+	Verificator verifiactor;
 	
 	public Game(Draw draw){
 		this.draw = draw;
@@ -30,6 +31,7 @@ public class Game {
 	
 	public int detectGameMode(ArrayList<Card> playedCards) {
 		Card card1, card2, card3, card4, card5;
+		verifiactor = new Verificator();
 		switch(playedCards.size()) {
 			case 1:
 				card1 = playedCards.get(0);
@@ -41,7 +43,7 @@ public class Game {
 			case 2:
 				card1 = playedCards.get(0); //First card value
 				card2 = playedCards.get(1); //Second card value
-				if(verifyEqual(card1, card2)) {
+				if(verifiactor.verifyEqual(card1, card2)) {
 					return 1; // 1 => Double
 				}
 				else if(card1.getValue() == EnumValue.JOKER || card2.getValue() == EnumValue.JOKER){
@@ -53,32 +55,32 @@ public class Game {
 				card1 = playedCards.get(0); //First card value
 				card2 = playedCards.get(1); //Second card value
 				card3 = playedCards.get(2); // Third card value
-				if(verifyEqual(card1, card2)&& verifyEqual(card1, card3)) {
+				if(verifiactor.verifyEqual(card1, card2) && verifiactor.verifyEqual(card1, card3)) {
 					return 3; // 3 => Triple game
 				}
-				else if(card1.getValue() == EnumValue.JOKER && verifyEqual(card2, card3)) { // If first Card is Joker
+				else if(card1.getValue() == EnumValue.JOKER && verifiactor.verifyEqual(card2, card3)) { // If first Card is Joker
 					return 3;
 				}
-				else if(card2.getValue() == EnumValue.JOKER && verifyEqual(card1, card3)) { // If Second Card is Joker
+				else if(card2.getValue() == EnumValue.JOKER && verifiactor.verifyEqual(card1, card3)) { // If Second Card is Joker
 					return 3; 
 				}
-				else if(card3.getValue() == EnumValue.JOKER && verifyEqual(card1, card2)) { // If Third Card is Joker
+				else if(card3.getValue() == EnumValue.JOKER && verifiactor.verifyEqual(card1, card2)) { // If Third Card is Joker
 					return 3; 
 				}
 				else {
 					card1 = playedCards.get(0); //First card value
 					card2 = playedCards.get(1); //Second card value
 					card3 = playedCards.get(2); // Third card value
-					if(verifyFollow(card1, card2) && verifyFollow(card2, card3)) {
+					if(verifiactor.verifyFollow(card1, card2) && verifiactor.verifyFollow(card2, card3)) {
 						return 4; // 4 => Set of 3 cards
 					}
-					else if(card1.getValue() == EnumValue.JOKER && verifyFollow(card2, card3)) { // If the first card is a Joker
+					else if(card1.getValue() == EnumValue.JOKER && verifiactor.verifyFollow(card2, card3)) { // If the first card is a Joker
 						return 4;
 					}
-					else if(card2.getValue() == EnumValue.JOKER && verifyFollowJoker(card1, card3)) { // If the second card is a Joker
+					else if(card2.getValue() == EnumValue.JOKER && verifiactor.verifyFollowJoker(card1, card3)) { // If the second card is a Joker
 						return 4;
 					}
-					else if(card3.getValue() == EnumValue.JOKER && verifyFollow(card1, card2)) { // If the third card is a Joker
+					else if(card3.getValue() == EnumValue.JOKER && verifiactor.verifyFollow(card1, card2)) { // If the third card is a Joker
 						return 4;
 					}
 				}
@@ -88,19 +90,19 @@ public class Game {
 				card2 = playedCards.get(1); //Second card value
 				card3 = playedCards.get(2); // Third card value
 				card4 = playedCards.get(3); // Fourth card value
-				if(verifyFollow(card1, card2) && verifyFollow(card2, card3) && verifyFollow(card2, card3)) {
+				if(verifiactor.verifyFollow(card1, card2) && verifiactor.verifyFollow(card2, card3) && verifiactor.verifyFollow(card2, card3)) {
 					return 5; // 5 => Set of 4 cards
 				}
-				else if(card1.getValue() == EnumValue.JOKER && verifyFollow(card2, card3) && verifyFollow(card3, card4)) { // If the first card is a Joker
+				else if(card1.getValue() == EnumValue.JOKER && verifiactor.verifyFollow(card2, card3) && verifiactor.verifyFollow(card3, card4)) { // If the first card is a Joker
 					return 5;
 				}
-				else if(card2.getValue() == EnumValue.JOKER && verifyFollowJoker(card1, card3) && verifyFollow(card3, card4)) { // If the second card is a Joker
+				else if(card2.getValue() == EnumValue.JOKER && verifiactor.verifyFollowJoker(card1, card3) && verifiactor.verifyFollow(card3, card4)) { // If the second card is a Joker
 					return 5;
 				}
-				else if(card3.getValue() == EnumValue.JOKER && verifyFollow(card1, card2) && verifyFollowJoker(card2, card4)) { // If the third card is a Joker
+				else if(card3.getValue() == EnumValue.JOKER && verifiactor.verifyFollow(card1, card2) && verifiactor.verifyFollowJoker(card2, card4)) { // If the third card is a Joker
 					return 5;
 				}
-				else if(card4.getValue() == EnumValue.JOKER && verifyFollow(card1, card2) && verifyFollow(card2, card3)) { // If the fourth card is a Joker
+				else if(card4.getValue() == EnumValue.JOKER && verifiactor.verifyFollow(card1, card2) && verifiactor.verifyFollow(card2, card3)) { // If the fourth card is a Joker
 					return 5;
 				}
 				break;
@@ -110,22 +112,22 @@ public class Game {
 				card3 = playedCards.get(2); // Third card value
 				card4 = playedCards.get(3); // Fourth card value
 				card5 = playedCards.get(4); // Fifth card value
-				if(verifyFollow(card1, card2) && verifyFollow(card2, card3) && verifyFollow(card3, card4) && verifyFollow(card4, card5)) {
+				if(verifiactor.verifyFollow(card1, card2) && verifiactor.verifyFollow(card2, card3) && verifiactor.verifyFollow(card3, card4) && verifiactor.verifyFollow(card4, card5)) {
 					return 6; // 6 => Set of 5 cards
 				}
-				else if(card1.getValue() == EnumValue.JOKER && verifyFollow(card2, card3) && verifyFollow(card3, card4) && verifyFollow(card4, card5)) { // If the first card is a Joker
+				else if(card1.getValue() == EnumValue.JOKER && verifiactor.verifyFollow(card2, card3) && verifiactor.verifyFollow(card3, card4) && verifiactor.verifyFollow(card4, card5)) { // If the first card is a Joker
 					return 6;
 				}
-				else if(card2.getValue() == EnumValue.JOKER && verifyFollowJoker(card1, card3) && verifyFollow(card3, card4) && verifyFollow(card4, card5)) { // If the second card is a Joker
+				else if(card2.getValue() == EnumValue.JOKER && verifiactor.verifyFollowJoker(card1, card3) && verifiactor.verifyFollow(card3, card4) && verifiactor.verifyFollow(card4, card5)) { // If the second card is a Joker
 					return 6;
 				}
-				else if(card3.getValue() == EnumValue.JOKER && verifyFollow(card1, card2) && verifyFollowJoker(card2, card4) && verifyFollow(card4, card5)) { // If the third card is a Joker
+				else if(card3.getValue() == EnumValue.JOKER && verifiactor.verifyFollow(card1, card2) && verifiactor.verifyFollowJoker(card2, card4) && verifiactor.verifyFollow(card4, card5)) { // If the third card is a Joker
 					return 6;
 				}
-				else if(card4.getValue() == EnumValue.JOKER && verifyFollow(card1, card2) && verifyFollow(card2, card3) && verifyFollowJoker(card3, card5)) { // If the fourth card is a Joker
+				else if(card4.getValue() == EnumValue.JOKER && verifiactor.verifyFollow(card1, card2) && verifiactor.verifyFollow(card2, card3) && verifiactor.verifyFollowJoker(card3, card5)) { // If the fourth card is a Joker
 					return 6;
 				}
-				else if(card5.getValue() == EnumValue.JOKER && verifyFollow(card1, card2) && verifyFollow(card2, card3) && verifyFollow(card3, card4)) { // If the fifth card is a Joker
+				else if(card5.getValue() == EnumValue.JOKER && verifiactor.verifyFollow(card1, card2) && verifiactor.verifyFollow(card2, card3) && verifiactor.verifyFollow(card3, card4)) { // If the fifth card is a Joker
 					return 6;
 				}
 				break;
@@ -137,36 +139,5 @@ public class Game {
 	}
 	
 	
-	public boolean verifyFollow(Card c1, Card c2){
-		int c1Value = c1.getValue().getEnumValue();
-		int c2Value = c2.getValue().getEnumValue();
-		if(c1Value + 1 == c2Value){
-			return true;
-		}
-		else{
-			return false;
-		}
-	}
 	
-	public boolean verifyFollowJoker(Card c1, Card c2){
-		int c1Value = c1.getValue().getEnumValue();
-		int c2Value = c2.getValue().getEnumValue();
-		if(c1Value + 2 == c2Value){
-			return true;
-		}
-		else{
-			return false;
-		}
-	}
-	
-	public boolean verifyEqual(Card c1, Card c2){
-		int c1Value = c1.getValue().getEnumValue();
-		int c2Value = c2.getValue().getEnumValue();
-		if(c1Value == c2Value){
-			return true;
-		}
-		else{
-			return false;
-		}
-	}
 }
